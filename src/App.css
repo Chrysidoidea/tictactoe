@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
+.row {
+  display: flex;
+}
+.game {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ol {
+  display: flex;
+  color: #176B87;
+  width: 4.5rem;
+  padding: 0 0 0 .8rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.history {
+  background-color: rgba(23, 107, 135, 0.15);
+  color: #64CCC5;
+  margin: .03rem;
+  padding: .2rem .6rem;
+  font-size: .5rem;
+  border-radius: .1rem;
+  cursor: pointer;
+  transition: .1s;
+  border: none;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.history:hover {
+  background-color: rgba(100, 204, 197, 0.14);
+  color: rgba(23, 107, 135, 0.52);
+}
+.game-info {
+  position: absolute;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  right: 0;
+  height: 100vh;
+  background-color: #DAFFFB;
+  padding: 0;
+  font-size: .5rem;
+  color: #FFF;
+}
+.game-info_footer {
+  padding-bottom: 1rem;
+  color: #176B87;
+}
+.status {
+  text-align: center;
+  color: #176B87;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.square {
+  height: 3rem;
+  width: 3rem;
+  background-color: #001C30;
+  border: 1px solid #176B87;
+  transition: .2s;
+  cursor: pointer;
+  color: #64CCC5;
+  margin: 0.1rem;
+}
+.square:hover {
+  background-color: #023256;
 }
 
-.App-link {
-  color: #61dafb;
+.tictactoe {
+  position: absolute;
+  right: 50%;
+  top: 20%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.section {
+  display: grid;
+  place-content: center;
+  background-color: #001C30;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+.winner {
+   background-color: #64CCC5;
+   color: #001C30;
+ }
+.winner:hover {
+  background-color: #6fe3db;
 }
