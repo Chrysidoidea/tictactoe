@@ -1,6 +1,6 @@
 {
   "name": "tictactoe",
-  "homepage": "https://chrysidoidea.github.io/tictactoe/",
+  "homepage": "https://chrysidoidea.github.io/tictactoe",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predepoy": "npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
