@@ -1,7 +1,7 @@
-export const Button = ({value, onSquareClick, winningCombo, index}) => {
+export const Button = ({value, onSquareClick, winningCombo, draw, index}) => {
 
     const isWinningCombo = winningCombo && winningCombo.includes(index);
-    const buttonClassName = isWinningCombo && isWinningCombo ? "square winner" : "square";
+    const buttonClassName = isWinningCombo ? "square winner": draw ? "square draw": "square";
 
     return (
         <button

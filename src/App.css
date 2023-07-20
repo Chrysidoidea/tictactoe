@@ -3,60 +3,58 @@
 }
 .game {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-ol {
-  display: flex;
-  color: #176B87;
-  width: 4.5rem;
-  padding: 0 0 0 .8rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-.history {
-  background-color: rgba(23, 107, 135, 0.15);
-  color: #64CCC5;
-  margin: .03rem;
-  padding: .2rem .6rem;
-  font-size: .5rem;
-  border-radius: .1rem;
-  cursor: pointer;
-  transition: .1s;
-  border: none;
-}
-.history:hover {
-  background-color: rgba(100, 204, 197, 0.14);
-  color: rgba(23, 107, 135, 0.52);
-}
-.game-info {
-  position: absolute;
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  right: 0;
+  background-color: #001C30;
+  width: 100vw;
   height: 100vh;
-  background-color: #DAFFFB;
+}
+.history {
+  background: linear-gradient(to bottom, rgba(111, 227, 219, 0.04), rgba(111, 227, 219, 0.01));
+  color: #6fe3db;
+  margin: .1rem;
+  padding: .7rem .4rem;
+  font-size: 1.1rem;
+  border-radius: .1rem;
+  cursor: pointer;
+  border: none;
+}
+.history:hover {
+  background: linear-gradient(to bottom, rgba(111, 227, 219, 0.09), rgba(111, 227, 219, 0.01));
+}
+.history-header {
+  font-size: 5rem;
+  color: rgba(111, 227, 219, 0.78);
+  filter: blur(.5px);
+}
+
+.game-info {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  background: linear-gradient(to bottom, rgba(111, 227, 219, 0.0001), rgba(111, 227, 219, 0.09));
   padding: 0;
   font-size: .5rem;
-  color: #FFF;
 }
-.game-info_footer {
-  padding-bottom: 1rem;
-  color: #176B87;
+ul {
+  list-style: none;
+  display: flex;
+  margin: 1rem;
 }
 .status {
   text-align: center;
+  font-size: 3rem;
+  margin: 2rem 0;
   color: #176B87;
   text-transform: uppercase;
   font-weight: bold;
 }
 .square {
-  height: 3rem;
-  width: 3rem;
+  height: 10rem;
+  width: 10rem;
+  font-size: 6rem;
   background-color: #001C30;
   border: 1px solid #176B87;
   transition: .2s;
@@ -67,24 +65,18 @@ ol {
 .square:hover {
   background-color: #023256;
 }
-
-.tictactoe {
-  position: absolute;
-  right: 50%;
-  top: 20%;
-}
-.section {
-  display: grid;
-  place-content: center;
-  background-color: #001C30;
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-}
 .winner {
    background-color: #64CCC5;
    color: #001C30;
  }
 .winner:hover {
   background-color: #6fe3db;
+}
+
+.draw {
+  background-color: rgba(236, 23, 175, 0.82);
+  color: #001C30;
+}
+.draw:hover {
+  background-color: rgba(236, 23, 175);
 }

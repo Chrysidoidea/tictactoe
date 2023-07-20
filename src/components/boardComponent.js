@@ -67,30 +67,30 @@ const Board = ({
     }
 
     return (
-        <div className='section'>
-            <div className="tictactoe">
 
-                <div className='status'>{stat}</div>
+        <div className="tictactoe">
 
-                {[0, 3, 6].map((rowStart) => (
-                    <div
-                        className="row"
-                        key={rowStart}
-                    >
-                        {
-                            [rowStart, rowStart + 1, rowStart + 2].map((index) => (
-                                <Button
-                                    key={index}
-                                    value={squares[index]}
-                                    onSquareClick={() => handleClick(index)}
-                                    winningCombo={winner && winner.winningCombo}
-                                    index={index}
-                                />
-                            ))
-                        }
-                    </div>
-                ))}
-            </div>
+            <div className='status'>{stat}</div>
+
+            {[0, 3, 6].map((rowStart) => (
+                <div
+                    className="row"
+                    key={rowStart}
+                >
+                    {
+                        [rowStart, rowStart + 1, rowStart + 2].map((index) => (
+                            <Button
+                                key={index}
+                                value={squares[index]}
+                                onSquareClick={() => handleClick(index)}
+                                winningCombo={winner && winner.winningCombo}
+                                draw={winner && winner.winningCombo === null}
+                                index={index}
+                            />
+                        ))
+                    }
+                </div>
+            ))}
         </div>
 
     )

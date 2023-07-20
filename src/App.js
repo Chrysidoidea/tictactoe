@@ -11,7 +11,7 @@ const Game = () => {
     const handlePlay = (nextSquares) => {
         const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
         setHistory(nextHistory);
-        setCurrentMove(nextHistory.length -1);
+        setCurrentMove(nextHistory.length - 1);
     }
 
     const jumpTo = (nextMove) => {
@@ -23,7 +23,7 @@ const Game = () => {
         let description;
 
         if (move > 0) {
-            description = `Go to move: ${move}`
+            description = `To move: ${move}`
         } else {
             description = `To game start`
         }
@@ -43,16 +43,17 @@ const Game = () => {
     return (
         <div className="game">
             <div className='game-board'>
-                <Board
-                    togglePlayer={togglePlayer}
-                    squares={currentSquares}
-                    onPlay={handlePlay}
-                />
-            </div>
-            <div className='game-info'>
-                <div className='move-tracker'>
-                    <ol>{moves}</ol>
+                <div className='section'>
+                    <Board
+                        togglePlayer={togglePlayer}
+                        squares={currentSquares}
+                        onPlay={handlePlay}
+                    />
                 </div>
+            </div>
+            <div className="history-header">History</div>
+            <div className='game-info'>
+                    <ul>{moves}</ul>
             </div>
         </div>
     )
