@@ -1,18 +1,22 @@
-import {Button} from "./rowComponent.";
-import soundFile from "../scribble.mp3"
+import React from "react";
+import {SquareButton} from "./RowComponent.";
+import {SquareValue} from "./RowComponent.";
 
-const Board = ({
+type BoardProps = {
+    togglePlayer: boolean;
+    squares: SquareValue[];
+    onPlay: (nextSquares: SquareValue[]) => void;
+}
+
+const Board: React.FC<BoardProps> = ({
                    togglePlayer,
                    squares,
                    onPlay,
                }) => {
 
-    const scribble = new Audio(soundFile);
 
-
-    const handleClick = (e) => {
-        if (!squares[e] && !calculateWinner(squares)) {
-            scribble.play();
+    const handleClick = (e:number) => {
+        if (!squares[e] && !calculateWinner()) {
             const nextSquares = [...squares];
             nextSquares[e] = togglePlayer ? "X" : "O";
             onPlay(nextSquares);
@@ -53,8 +57,8 @@ const Board = ({
     }
 
 
-    const winner = calculateWinner(squares);
-    let stat;
+    const winner = calculateWinner();
+    let stat: string;
 
     if (winner && winner.winner !== null) {
         stat = `Player ${winner.winner} wins`;
@@ -79,7 +83,7 @@ const Board = ({
                 >
                     {
                         [rowStart, rowStart + 1, rowStart + 2].map((index) => (
-                            <Button
+                            <SquareButton
                                 key={index}
                                 value={squares[index]}
                                 onSquareClick={() => handleClick(index)}

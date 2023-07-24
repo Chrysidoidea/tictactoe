@@ -1,26 +1,30 @@
+import React,{useState} from "react";
+
+import Board from "./components/BoardComponent";
+import {SquareValue} from "./components/RowComponent.";
+
 import './App.css';
-import Board from "./components/boardComponent";
-import {useState} from "react";
 
-const Game = () => {
-    const [history, setHistory] = useState([Array(9).fill(null)]);
-    const [currentMove, setCurrentMove] = useState(0);
-    const currentSquares = history[currentMove];
-    const togglePlayer = currentMove % 2 === 0;
+type History = SquareValue[][];
 
-    const handlePlay = (nextSquares) => {
+const Game: React.FC = () => {
+    const [history, setHistory] = useState<History>([Array(9).fill(null)]);
+    const [currentMove, setCurrentMove] = useState<number>(0);
+    const currentSquares: SquareValue[] = history[currentMove];
+    const togglePlayer: boolean = currentMove % 2 === 0;
+
+    const handlePlay = (nextSquares: SquareValue[]) => {
         const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
         setHistory(nextHistory);
         setCurrentMove(nextHistory.length - 1);
     }
 
-    const jumpTo = (nextMove) => {
+    const jumpTo = (nextMove:number) => {
         setCurrentMove(nextMove);
     };
 
-
-    const moves = history.map((squares, move) => {
-        let description;
+    const moves = history.map((squares:SquareValue[], move:number) => {
+        let description: string;
 
         if (move > 0) {
             description = `To move: ${move}`
@@ -33,8 +37,9 @@ const Game = () => {
                 <button
                     className='history'
                     onClick={() => jumpTo(move)}
-                >{description}<
-                /button>
+                >
+                    {description}
+                </button>
             </li>
         )
     })
@@ -53,7 +58,7 @@ const Game = () => {
             </div>
             <div className="history-header">History</div>
             <div className='game-info'>
-                    <ul>{moves}</ul>
+                <ul>{moves}</ul>
             </div>
         </div>
     )
