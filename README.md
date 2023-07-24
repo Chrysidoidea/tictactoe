@@ -19,8 +19,11 @@ A simple implementation of the classic Tic Tac Toe game using React. Play with a
 ## Technologies Used
 
 - React: A JavaScript library for building user interfaces.
+- TypeScript: Adds type safety and enhances developer productivity.
 - CSS: Stylesheet for visual styling.
 - HTML: Structure of the game components.
 
 Start playing and have fun!
-Link for game: https://chrysidoidea.github.io/tictactoe/
+Link for game:
+[Play Tic Tac Toe](https://chrysidoidea.github.io/tictactoe/)
+
