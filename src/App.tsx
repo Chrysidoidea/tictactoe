@@ -48,16 +48,15 @@ const Game: React.FC = () => {
     return (
         <div className="game">
             <div className='game-board'>
-                <div className='section'>
                     <Board
                         togglePlayer={togglePlayer}
                         squares={currentSquares}
                         onPlay={handlePlay}
                     />
-                </div>
             </div>
-            <div className="history-header">History</div>
+
             <div className='game-info'>
+                <div className="history-header">History</div>
                 <ul>{moves}</ul>
             </div>
         </div>
