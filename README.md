@@ -1,9 +1,9 @@
 # Tic Tac Toe Game
 
 A simple implementation of the classic Tic Tac Toe game using React. Play with a friend and see who can get three symbols in a row, column, or diagonal!
+#[Play Tic Tac Toe](https://chrysidoidea.github.io/tictactoe/)
 
 ## How to Play
-
 1. The game is played on a 3x3 grid.
 2. Players take turns marking a square with their symbol, either "X" or "O".
 3. The first player to get three of their symbols in a row, column, or diagonal wins!
@@ -25,5 +25,4 @@ A simple implementation of the classic Tic Tac Toe game using React. Play with a
 
 Start playing and have fun!
 Link for game:
-[Play Tic Tac Toe](https://chrysidoidea.github.io/tictactoe/)
 
